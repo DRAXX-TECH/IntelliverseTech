@@ -318,7 +318,12 @@ a:hover {
   }
   
   .header-actions {
+    display: flex;
+  }
+  
+  .header-actions .btn {
     display: none;
+    
   }
   
   .mobile-menu-btn {
@@ -562,6 +567,7 @@ a:hover {
 }
 
 .toggle-thumb {
+  
   position: absolute;
   top: 2px;
   width: 24px;

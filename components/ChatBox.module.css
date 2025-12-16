@@ -284,7 +284,7 @@
 }
 
 .userMessage .messageContent {
-  background: #000;
+  background: #000000;
   color: white;
   border-bottom-right-radius: 4px;
   border: 1px solid #000;
@@ -303,7 +303,7 @@
 }
 
 .messageText p {
-  margin: 0;
+  margin: 0; 
 }
 
 .messageText p + p {
@@ -319,7 +319,7 @@
 }
 
 .userMessage .messageMeta {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgb(198, 206, 195);
 }
 
 .botMessage .messageMeta {
@@ -567,7 +567,7 @@
   }
 
   .chatMessages {
-    background: #111;
+    background: #111111;
   }
 
   .messageContent {
@@ -580,6 +580,7 @@
     background: #1a1a1a;
     color: #fff;
   }
+  
 
   .quickReply {
     background: #222;

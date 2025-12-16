@@ -183,7 +183,7 @@ export default function Footer() {
                 <h5 className="theme-title">Theme</h5>
                 <div className="theme-toggle-wrapper">
                   <ThemeToggle />
-                  <ThemeLabel /> {/* Use ThemeLabel component instead of inline logic */}
+                  <ThemeLabel />
                 </div>
               </div>
             </div>
