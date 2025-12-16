@@ -33,7 +33,7 @@ export default function FAQ() {
     },
     {
       question: 'What technologies do you use?',
-      answer: 'We use modern tech stacks: Next.js/React for frontend, Node.js/Python for backend, PostgreSQL/MongoDB for databases, AWS/Azure/Google Cloud for hosting, and Docker/Kubernetes for deployment.'
+      answer: 'We use modern tech stacks: Next.js/React for frontend, Node.js/Python/PHP for backend, PostgreSQL/MongoDB for databases, AWS/Azure/Google Cloud for hosting, and Docker/Kubernetes for deployment.'
     },
     {
       question: 'Do you provide content creation services?',

@@ -1,7 +1,7 @@
-// app/layout.js
 import './globals.css';
 import { ThemeProvider } from './theme-provider';
 import ChatBox from '@/components/ChatBox';
+import SpaceBackground from '@/components/SpaceBackground';
 
 export const metadata = {
   title: 'Intelliverse Technologies | AI & Blockchain Solutions',
@@ -13,6 +13,7 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <body>
         <ThemeProvider>
+          <SpaceBackground />
           {children}
           <ChatBox />
         </ThemeProvider>

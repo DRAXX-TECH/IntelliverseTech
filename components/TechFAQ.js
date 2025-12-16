@@ -55,7 +55,7 @@ export default function TechFAQ() {
   const softwareFAQs = [
     {
       question: 'What technologies do you use for software development?',
-      answer: 'Frontend: Next.js, React, TypeScript. Backend: Node.js, Python, .NET. Mobile: React Native, Flutter. Databases: PostgreSQL, MongoDB, Redis. Cloud: AWS, Azure, Google Cloud.',
+      answer: 'Frontend: Next.js, React, TypeScript. Backend: Node.js, Python, Php, .NET. Mobile: React Native, Flutter. Databases: PostgreSQL, MongoDB, Redis. Cloud: AWS, Azure, Google Cloud.',
       icon: <FaLaptopCode size={18} />
     },
     {
@@ -259,7 +259,7 @@ export default function TechFAQ() {
                 </div>
                 <div className="stack-item">
                   <div className="stack-category">Backend</div>
-                  <div className="stack-tech">Node.js, Python, .NET</div>
+                  <div className="stack-tech">Node.js, Python, Php, .NET</div>
                 </div>
                 <div className="stack-item">
                   <div className="stack-category">Hardware</div>
