@@ -132,9 +132,6 @@ export default function SoftwareServices() {
                   <span className="meta-item">📚 Detailed Playbooks</span>
                   <span className="meta-item">👥 Dedicated Squad</span>
                 </div>
-                <a href="#contact" className="software-link">
-                  Discuss Your Needs →
-                </a>
               </div>
             </div>
           ))}
@@ -177,8 +174,7 @@ export default function SoftwareServices() {
           </div>
           
           <div className="cta-actions">
-            <button className="btn">Download Service Catalog</button>
-            <button className="btn btn-secondary">Book Strategy Session</button>
+            <a href="#contact" className="btn btn-secondary">Book Strategy Session</a>
           </div>
         </div>
       </div>

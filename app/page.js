@@ -45,39 +45,39 @@ export default function Home() {
           <Approach /> 
         </ScrollAnimation>
 
-        <ScrollAnimation animation="fade-up" delay={200}>
+        <ScrollAnimation animation="fade-up" delay={100}>
         <SoftwareServices />
         </ScrollAnimation>
 
-        <ScrollAnimation animation="fade-up" delay={200}>
+        <ScrollAnimation animation="fade-up" delay={100}>
           <HardwareServices />
         </ScrollAnimation>
         
-        <ScrollAnimation animation="fade-up" delay={200}>
+        <ScrollAnimation animation="fade-up" delay={100}>
           <Solutions />
         </ScrollAnimation>
 
-        <ScrollAnimation animation="fade-up" delay={900}>
+        <ScrollAnimation animation="fade-up" delay={100}>
           <BlogSection /> 
         </ScrollAnimation>
 
-        <ScrollAnimation animation="fade-up" delay={200}>
+        <ScrollAnimation animation="fade-up" delay={100}>
           <FAQ />
         </ScrollAnimation>
 
-        <ScrollAnimation animation="fade-up" delay={800}>
+        <ScrollAnimation animation="fade-up" delay={100}>
           <TechFAQ />
         </ScrollAnimation>
         
-        <ScrollAnimation animation="fade-up" delay={200}>
+        <ScrollAnimation animation="fade-up" delay={100}>
           <About />
         </ScrollAnimation>
 
-        <ScrollAnimation animation="fade-up" delay={200}>
+        <ScrollAnimation animation="fade-up" delay={100}>
           <WhyChooseUs />
         </ScrollAnimation>
         
-        <ScrollAnimation animation="fade-up" delay={200}>
+        <ScrollAnimation animation="fade-up" delay={100}>
           <Contact />
         </ScrollAnimation>
       </main>

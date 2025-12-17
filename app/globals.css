@@ -24,7 +24,7 @@
   --shadow-light: rgba(0, 0, 0, 0.05);
   --shadow-medium: rgba(0, 0, 0, 0.1);
   --shadow-heavy: rgba(0, 0, 0, 0.2);
-  --overlay-light: rgba(255, 255, 255, 0.9);
+  --overlay-light: rgba(255, 255, 255, 0.596);
   --overlay-dark: rgba(0, 0, 0, 0.9);
   
   /* Spacing */
@@ -65,7 +65,7 @@
   --shadow-light: rgba(255, 255, 255, 0.05);
   --shadow-medium: rgba(255, 255, 255, 0.1);
   --shadow-heavy: rgba(255, 255, 255, 0.2);
-  --overlay-light: rgba(0, 0, 0, 0.9);
+  --overlay-light: rgba(0, 0, 0, 0.781);
   --overlay-dark: rgba(255, 255, 255, 0.9);
 }
 
@@ -209,7 +209,7 @@ a:hover {
 
 .logo {
   display: flex;
-  flex-direction: column;
+  align-items: center;
 }
 
 .logo-text {
@@ -217,6 +217,12 @@ a:hover {
   font-weight: 800;
   letter-spacing: -0.5px;
   color: var(--text-primary);
+}
+
+.logo-text-wrap {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
 }
 
 .logo-subtitle {
@@ -1325,6 +1331,11 @@ a:hover {
   background: var(--bg-primary);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
+}
+
+.eagle{
+  margin-top: -100px;
+  margin-bottom: -10px;
 }
 
 .footer-title {
@@ -4054,6 +4065,7 @@ select:focus {
 
 /* ===== BLOG PAGE STYLES ===== */
 .blog-page {
+  margin-top: 100px;
   padding: var(--spacing-3xl) 0;
 }
 
@@ -4833,4 +4845,56 @@ body::before {
   );
   pointer-events: none;
   z-index: -1;
+}
+
+
+
+
+.newsletter-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.newsletter-card {
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  padding: 40px;
+  border-radius: 16px;
+  background: var(--card-bg);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.newsletter-icon {
+  margin-bottom: 16px;
+}
+
+.newsletter-title {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.newsletter-description {
+  opacity: 0.8;
+  margin-bottom: 24px;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 12px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.15);
+}
+
+.newsletter-success {
+  color: #2ecc71;
+  font-weight: 500;
 }

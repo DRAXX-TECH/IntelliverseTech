@@ -125,7 +125,7 @@ export default function SpaceBackground() {
       rocks.forEach(r => {
         r.x -= r.s;
         if (r.x < 0) r.x = w;
-        ctx.fillStyle = 'rgba(150,150,150,0.8)';
+        ctx.fillStyle = 'rgba(150, 150, 150, 0.315)';
         ctx.beginPath();
         ctx.arc(r.x, r.y, r.r, 0, Math.PI * 2);
         ctx.fill();

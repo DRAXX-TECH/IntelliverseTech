@@ -82,10 +82,6 @@ export default function Services() {
                     <span key={idx} className="feature-tag">{feature}</span>
                   ))}
                 </div>
-                
-                <a href="#" className="service-link">
-                  Learn More →
-                </a>
               </div>
             </ScrollAnimation>
           ))}

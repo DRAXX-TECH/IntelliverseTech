@@ -91,11 +91,6 @@ export default function Solutions() {
             </div>
           ))}
         </div>
-        
-        <div className="solutions-cta">
-          <button className="btn">View All Projects</button>
-          <button className="btn btn-secondary">Request Proposal</button>
-        </div>
       </div>
     </section>
   );

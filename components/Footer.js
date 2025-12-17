@@ -3,6 +3,8 @@
 
 import { useState } from 'react';
 import ThemeToggle from './ThemeToggle';
+import Image from 'next/image';
+
 import { 
   FaLinkedin, 
   FaTwitter, 
@@ -193,6 +195,16 @@ export default function Footer() {
         {/* Bottom Section - Copyright & Info */}
         <div className="footer-bottom">
           <div className="footer-info">
+            <div className='eagle'>
+                        <Image
+                          src="/eagle3.png"
+                          alt="Intelliverse Technologies Logo"
+                          width={290}
+                          height={220}
+                          priority
+                          className="logo-image"
+                        />
+                        </div>
             <div className="footer-logo">
               <span className="logo-text">INTELLIVERSE</span>
               <span className="logo-tagline">TECHNOLOGIES</span>

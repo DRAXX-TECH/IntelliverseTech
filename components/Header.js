@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import ThemeToggle from './ThemeToggle';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -35,8 +37,20 @@ export default function Header() {
       <div className="container">
         <div className="header-content">
           <div className="logo">
-            <span className="logo-text">INTELLIVERSE</span>
-            <span className="logo-subtitle">TECHNOLOGIES</span>
+            <div>
+            <Image
+              src="/eagle3.png"
+              alt="Intelliverse Technologies Logo"
+              width={120}
+              height={90}
+              priority
+              className="logo-image"
+            />
+            </div>
+            <div className="logo-text-wrap">
+               <span className="logo-text">INTELLIVERSE</span>
+               <span className="logo-subtitle">TECHNOLOGIES</span>
+            </div>
           </div>
           
           <nav className={`nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
@@ -44,12 +58,14 @@ export default function Header() {
             <a href="#services" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Services</a>
             <a href="#solutions" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Solutions</a>
             <a href="#about" className="nav-link" onClick={() => setMobileMenuOpen(false)}>About</a>
-            
+            <a href="#contact" className="nav-link" onClick={() => setMobileMenuOpen(false)}>contact</a>
           </nav>
           
           <div className="header-actions">
             <ThemeToggle />
-            <a href="#contact" className="btn" onClick={() => setMobileMenuOpen(false)}>Contact Us</a>
+            <Link href="/newsletter" className="btn btn-secondary">
+              Subscribe
+            </Link>
           </div>
           
           <button 

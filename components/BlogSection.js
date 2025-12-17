@@ -122,7 +122,9 @@ export default function BlogSection() {
             <Link href="/blog" className="btn">
               Explore All Articles
             </Link>
-            <button className="btn btn-secondary">Subscribe to Newsletter</button>
+            <Link href="/newsletter" className="btn btn-secondary">
+              Subscribe to Newsletter
+            </Link>
           </div>
         </div>
       </div>

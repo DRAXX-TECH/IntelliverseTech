@@ -140,123 +140,85 @@ const ChatBox = () => {
   };
 
   const generateBotResponse = (userInput) => {
-    const input = userInput.toLowerCase();
-    let response = {
-      text: "Thank you for your inquiry. Our team will respond shortly. In the meantime, you can visit our contact page or browse our services section for more information.",
-      quickReplies: [
-        "Software Services",
-        "Hardware Solutions",
-        "Contact Information",
-        "Business Hours"
-      ]
-    };
+  const input = userInput.toLowerCase();
 
-    // Enhanced keyword matching for IT services
-    if (input.includes('hello') || input.includes('hi') || input.includes('hey')) {
-      response = {
-        text: "Hello! Welcome to our IT services support. How can I assist you today?",
-        quickReplies: [
-          "Software Development",
-          "Hardware Support",
-          "Technical Consulting",
-          "Emergency Support"
-        ]
-      };
-    } else if (input.includes('software') || input.includes('development') || input.includes('app')) {
-      response = {
-        text: "Our **Software Development Services** include:\n• Custom Application Development\n• Web & Mobile Solutions\n• Cloud Integration\n• API Development & Integration\n• Software Maintenance & Support",
-        quickReplies: [
-          "Request a Quote",
-          "View Case Studies",
-          "Technical Requirements",
-          "Development Timeline"
-        ]
-      };
-    } else if (input.includes('hardware') || input.includes('iot') || input.includes('device')) {
-      response = {
-        text: "Our **Hardware Solutions** cover:\n• IoT Device Development\n• Hardware Prototyping\n• Embedded Systems\n• Network Infrastructure\n• Hardware Maintenance",
-        quickReplies: [
-          "Hardware Specifications",
-          "Support & Warranty",
-          "Integration Services",
-          "Request Consultation"
-        ]
-      };
-    } else if (input.includes('support') || input.includes('help') || input.includes('issue')) {
-      response = {
-        text: "For **Technical Support**:\n• Priority Support: 24/7 availability\n• Response Time: < 1 hour for emergencies\n• Support Portal: support.yourcompany.com\n• SLA: 99.9% uptime guarantee",
-        quickReplies: [
-          "Submit Support Ticket",
-          "Emergency Contact",
-          "Knowledge Base",
-          "Schedule Maintenance"
-        ]
-      };
-    } else if (input.includes('price') || input.includes('cost') || input.includes('quote')) {
-      response = {
-        text: "Pricing is based on project scope, complexity, and timeline. We offer:\n• Fixed-price projects\n• Time & material contracts\n• Retainer agreements\n• Maintenance packages",
-        quickReplies: [
-          "Get Custom Quote",
-          "View Pricing Tiers",
-          "Schedule Discovery Call",
-          "Budget Planning"
-        ]
-      };
-    } else if (input.includes('contact') || input.includes('email') || input.includes('phone') || input.includes('call')) {
-      response = {
-        text: "**Contact Information:**\n📧 Email: info@yourcompany.com\n📞 Phone: +1 (555) 123-4567\n📍 Address: 123 Tech Street, Silicon Valley, CA\n🕒 Hours: Mon-Fri 9am-6pm PST",
-        quickReplies: [
-          "Schedule a Meeting",
-          "Sales Department",
-          "Technical Support",
-          "Visit Our Office"
-        ]
-      };
-    } else if (input.includes('hour') || input.includes('time') || input.includes('available')) {
-      response = {
-        text: "**Business Hours:**\nMonday - Friday: 9:00 AM - 6:00 PM PST\nSaturday: 10:00 AM - 2:00 PM PST\nSunday: Emergency Support Only\n24/7 monitoring for critical systems",
-        quickReplies: [
-          "Emergency Protocol",
-          "After-Hours Support",
-          "Holiday Schedule",
-          "Remote Assistance"
-        ]
-      };
-    } else if (input.includes('emergency') || input.includes('urgent') || input.includes('critical')) {
-      response = {
-        text: "**Emergency Support Protocol:**\n🚨 Emergency Line: +1 (555) 911-HELP\n📋 Escalation: Immediate response\n⏱️ Response Time: < 15 minutes\n🔧 Resolution: 24/7 until resolved",
-        quickReplies: [
-          "Call Emergency Line",
-          "System Down Protocol",
-          "Data Recovery",
-          "Security Incident"
-        ]
-      };
-    } else if (input.includes('thank') || input.includes('thanks') || input.includes('appreciate')) {
-      response = {
-        text: "You're welcome! We're here to ensure your technology works for you. Is there anything else you'd like to know about our services?",
-        quickReplies: [
-          "Service Catalog",
-          "Client Testimonials",
-          "Technical Documentation",
-          "All Set, Thanks"
-        ]
-      };
+  const responseMap = [
+    {
+      keywords: ['hello', 'yoo', 'hi', 'hey'],
+      text: "Hello! Welcome to our IT services support. How can I assist you today?",
+      quickReplies: ["Software Development", "Hardware Support", "Technical Consulting", "Emergency Support"]
+    },
+    {
+      keywords: ['software', 'development', 'app'],
+      text: "Our Software Development Services include:\n• Custom Application Development\n• Web & Mobile Solutions\n• Cloud Integration\n• API Development & Integration\n• Software Maintenance & Support",
+      quickReplies: ["Request a Quote", "View Case Studies", "Technical Requirements", "Development Timeline"]
+    },
+    {
+      keywords: ['hardware', 'iot', 'device'],
+      text: "Our Hardware Solutions cover:\n• IoT Device Development\n• Hardware Prototyping\n• Embedded Systems\n• Network Infrastructure\n• Hardware Maintenance",
+      quickReplies: ["Hardware Specifications", "Support & Warranty", "Integration Services", "Request Consultation"]
+    },
+    {
+      keywords: ['support', 'help', 'issue'],
+      text: "For Technical Support:\n• Priority Support: 24/7 availability\n• Response Time: < 1 hour for emergencies\n• Support Portal: support.yourcompany.com\n• SLA: 99.9% uptime guarantee",
+      quickReplies: ["Submit Support Ticket", "Emergency Contact", "Knowledge Base", "Schedule Maintenance"]
+    },
+    {
+      keywords: ['price', 'cost', 'quote'],
+      text: "Pricing is based on project scope, complexity, and timeline. We offer:\n• Fixed-price projects\n• Time & material contracts\n• Retainer agreements\n• Maintenance packages",
+      quickReplies: ["Get Custom Quote", "View Pricing Tiers", "Schedule Discovery Call", "Budget Planning"]
+    },
+    {
+      keywords: ['contact', 'email', 'phone', 'call'],
+      text: "Contact Information:\n📧 Email: info@yourcompany.com\n📞 Phone: +1 (555) 123-4567\n📍 Address: 123 Tech Street, Silicon Valley, CA\n🕒 Hours: Mon-Fri 9am-6pm PST",
+      quickReplies: ["Schedule a Meeting", "Sales Department", "Technical Support", "Visit Our Office"]
+    },
+    {
+      keywords: ['hour', 'time', 'available'],
+      text: "Business Hours:\nMonday - Friday: 9:00 AM - 6:00 PM PST\nSaturday: 10:00 AM - 2:00 PM PST\nSunday: Emergency Support Only\n24/7 monitoring for critical systems",
+      quickReplies: ["Emergency Protocol", "After-Hours Support", "Holiday Schedule", "Remote Assistance"]
+    },
+    {
+      keywords: ['emergency', 'urgent', 'critical'],
+      text: "Emergency Support Protocol:\n🚨 Emergency Line: +1 (555) 911-HELP\n📋 Escalation: Immediate response\n⏱️ Response Time: < 15 minutes\n🔧 Resolution: 24/7 until resolved",
+      quickReplies: ["Call Emergency Line", "System Down Protocol", "Data Recovery", "Security Incident"]
+    },
+    {
+      keywords: ['thank', 'thanks', 'appreciate'],
+      text: "You're welcome! We're here to ensure your technology works for you. Is there anything else you'd like to know about our services?",
+      quickReplies: ["Service Catalog", "Client Testimonials", "Technical Documentation", "All Set, Thanks"]
     }
+  ];
 
-    const botMessage = {
-      id: Date.now() + 1,
-      text: response.text,
-      sender: 'bot',
-      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-      timestamp: new Date(),
-      read: !isMinimized && isOpen,
-      quickReplies: response.quickReplies
-    };
+  // Find all matching responses
+  const matchedResponses = responseMap.filter(r =>
+    r.keywords.some(k => input.includes(k))
+  );
 
-    setMessages(prev => [...prev, botMessage]);
-    setIsTyping(false);
+  // Combine all matched responses if multiple
+  let combinedText = "Thank you for your inquiry. Our team will respond shortly.";
+  let combinedQuickReplies = ["Software Services", "Hardware Solutions", "Contact Information", "Business Hours"];
+
+  if (matchedResponses.length > 0) {
+    combinedText = matchedResponses.map(r => r.text).join("\n\n");
+    // Merge quick replies and remove duplicates
+    combinedQuickReplies = [...new Set(matchedResponses.flatMap(r => r.quickReplies))];
+  }
+
+  const botMessage = {
+    id: Date.now() + 1,
+    text: combinedText,
+    sender: 'bot',
+    time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+    timestamp: new Date(),
+    read: !isMinimized && isOpen,
+    quickReplies: combinedQuickReplies
   };
+
+  setMessages(prev => [...prev, botMessage]);
+  setIsTyping(false);
+};
+
 
   const handleQuickReply = (text) => {
     setInputValue(text);
