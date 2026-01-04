@@ -285,7 +285,7 @@ export default function TechFAQ() {
           </div>
           <div className="cta-actions">
             <button className="btn">Schedule Technical Call</button>
-            <button className="btn btn-secondary">Download Tech Specs</button>
+            {/* <button className="btn btn-secondary">Download Tech Specs</button> */}
           </div>
         </div>
       </div>

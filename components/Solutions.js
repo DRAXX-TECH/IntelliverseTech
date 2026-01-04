@@ -83,11 +83,11 @@ export default function Solutions() {
                 ))}
               </div>
               
-              <div className="solution-footer">
+              {/* <div className="solution-footer">
                 <a href="#" className="solution-link">
                   View Case Study →
                 </a>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>

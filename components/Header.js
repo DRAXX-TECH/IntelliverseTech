@@ -63,9 +63,9 @@ export default function Header() {
           
           <div className="header-actions">
             <ThemeToggle />
-            <Link href="/newsletter" className="btn btn-secondary">
+            {/* <Link href="/newsletter" className="btn btn-secondary">
               Subscribe
-            </Link>
+            </Link> */}
           </div>
           
           <button 

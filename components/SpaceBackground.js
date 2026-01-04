@@ -12,11 +12,22 @@ export default function SpaceBackground() {
     let w = window.innerWidth;
     let h = window.innerHeight;
 
-    // handle device pixel ratio for crisp dark color
     const dpr = window.devicePixelRatio || 1;
-    canvas.width = w * dpr;
-    canvas.height = h * dpr;
-    ctx.scale(dpr, dpr);
+
+    function resize() {
+      w = window.innerWidth;
+      h = window.innerHeight;
+      canvas.width = w * dpr;
+      canvas.height = h * dpr;
+      ctx.setTransform(1, 0, 0, 1, 0, 0); // reset transform
+      ctx.scale(dpr, dpr);
+
+      initStars();
+      initPlanets();
+      initRocks();
+    }
+
+    window.addEventListener('resize', resize);
 
     // Theme helper
     const theme = () => document.documentElement.getAttribute('data-theme') || 'dark';
@@ -35,18 +46,24 @@ export default function SpaceBackground() {
     }
 
     // Planets
-    const planets = [
-      { x: w * 0.25, y: h * 0.3, r: 80, color: 'rgba(180,80,50,0.9)' },
-      { x: w * 0.75, y: h * 0.6, r: 120, color: 'rgba(60,120,200,0.85)' }
-    ];
+    let planets = [];
+    function initPlanets() {
+      planets = [
+        { x: w * 0.25, y: h * 0.3, r: Math.min(w, h) * 0.1, color: 'rgba(180,80,50,0.5)' },
+        { x: w * 0.75, y: h * 0.6, r: Math.min(w, h) * 0.15, color: 'rgba(60,120,200,0.45)' }
+      ];
+    }
 
-    // Asteroids / Rocks
-    const rocks = Array.from({ length: 15 }, () => ({
-      x: Math.random() * w,
-      y: Math.random() * h,
-      r: Math.random() * 6 + 2,
-      s: Math.random() * 0.6 + 0.2
-    }));
+    // Rocks / asteroids
+    let rocks = [];
+    function initRocks() {
+      rocks = Array.from({ length: 15 }, () => ({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        r: Math.random() * 6 + 2,
+        s: Math.random() * 0.6 + 0.2
+      }));
+    }
 
     // Shooting stars
     let shootingStars = [];
@@ -58,22 +75,11 @@ export default function SpaceBackground() {
         speed: Math.random() * 15 + 5
       });
     }
-
     setInterval(spawnShootingStar, 5000);
 
-    function resize() {
-      w = window.innerWidth;
-      h = window.innerHeight;
-      canvas.width = w * dpr;
-      canvas.height = h * dpr;
-      ctx.scale(dpr, dpr);
-      initStars();
-    }
+    resize(); // initial setup
 
-    window.addEventListener('resize', resize);
-    initStars();
-
-    // Draw functions
+    // DRAWING FUNCTIONS
     function drawBackground() {
       ctx.fillStyle = theme() === 'dark' ? '#050507' : '#f6f7f9';
       ctx.fillRect(0, 0, w, h);
@@ -93,7 +99,6 @@ export default function SpaceBackground() {
 
     function drawStars() {
       stars.forEach(star => {
-        // flicker
         star.o += (Math.random() - 0.5) * 0.02;
         star.o = Math.min(Math.max(star.o, 0.2), 0.7);
 
@@ -163,5 +168,5 @@ export default function SpaceBackground() {
     return () => window.removeEventListener('resize', resize);
   }, []);
 
-  return <canvas ref={canvasRef} className="space-canvas" style={{ display: 'block' }} />;
+  return <canvas ref={canvasRef} className="space-canvas" />;
 }

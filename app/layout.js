@@ -6,6 +6,9 @@ import SpaceBackground from '@/components/SpaceBackground';
 export const metadata = {
   title: 'Intelliverse Technologies | AI & Blockchain Solutions',
   description: 'Professional AI, Blockchain, and Cloud Solutions for Modern Businesses',
+  icons: {
+    icon: '/eagle3.png',
+  },
 };
 
 export default function RootLayout({ children }) {
